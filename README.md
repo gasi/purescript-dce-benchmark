@@ -1,4 +1,4 @@
-# PureScript Dead Code Elimination Proof-of-Concept
+# PureScript Dead Code Elimination Proof of Concept
 
 ## Prerequisites
 
