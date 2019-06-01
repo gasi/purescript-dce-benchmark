@@ -1,8 +1,7 @@
 module Main where
+  
+pureScriptUsed :: String -> String
+pureScriptUsed _ = "PureScript used"
 
-import Prelude
-
-import External (pureScriptUsed)
-
-main :: String
-main = "Main: " <> pureScriptUsed
+pureScriptUnused :: String -> String
+pureScriptUnused _ = "PureScript unused!"
