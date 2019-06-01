@@ -1,20 +1,23 @@
-# Purescript Dead-Code Elimination Proof-of-Concept
+# PureScript Dead Code Elimination Proof-of-Concept
 
-## Prereqs
+## Prerequisites
+
 ```sh
 brew install bats # or the equivalent on your system
 ```
 
 
-## First Example
+## Example 1: DCE in webpack + JS
+
 ```sh
 cd example1-dce-js
 npm install
 bats test.bats
 ```
 
-## Second Example
-```
+## Example 2: No DCE with webpack + PureScript CommonJS
+
+```sh
 cd example2-no-dce-purs
 npm install
 npx bower install
