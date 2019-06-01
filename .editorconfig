@@ -1,0 +1,11 @@
+# This file should override whatever file you may have in your home dir
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[*.{js,json,jsx,md,purs}]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = true
