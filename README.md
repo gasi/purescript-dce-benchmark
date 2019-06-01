@@ -6,6 +6,13 @@
 brew install bats # or the equivalent on your system
 ```
 
+## Quickstart
+
+Run all tests:
+
+```sh
+make
+```
 
 ## Example 1: DCE in webpack + JS
 
