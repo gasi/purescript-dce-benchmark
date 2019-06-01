@@ -4,6 +4,5 @@ module.exports = {
     minimize: false,
     usedExports: true,
     concatenateModules: false,
-    // usedExports: false,
   }
 };

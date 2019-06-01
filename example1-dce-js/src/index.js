@@ -1,6 +1,3 @@
-// import * as Main from "../output/Main"
-
-import { javaScriptUsed } from "./JS"
+import { javaScriptUsed } from "./External"
 
 console.log("JS: ", javaScriptUsed("JS"))
-// console.log("PureScript:", Main.main())
