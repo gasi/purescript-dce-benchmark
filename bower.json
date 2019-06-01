@@ -1,0 +1,23 @@
+{
+  "name": "purescript-dce-benchmark",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "purescript-console": "^4.2.0"
+  },
+  "devDependencies": {},
+  "authors": [
+    "Daniel Gasienica <daniel@gasienica.ch>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true
+}
