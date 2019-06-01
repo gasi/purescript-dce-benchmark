@@ -1,2 +1,13 @@
-export const javaScriptUsed = x => eval(`JS: used: ${x}`)
-export const javaScriptUnused = x => eval(`JS: unused: ${x}`)
+function javaScriptUsed () {
+    return x - y
+}
+
+function javaScriptUnused () {
+    return x + y
+}
+
+
+export {
+    javaScriptUsed,
+    javaScriptUnused
+}
