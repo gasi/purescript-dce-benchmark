@@ -5,7 +5,7 @@ function setup {
   cd ../purescript
   stack build
   stack exec purs \
-    -- compile ../example4-dce-purs-multiple-modules/bower_components/**/*.purs ../example4-dce-purs-multiple-modules/src/*.purs \
+    -- compile ../example4-dce-purs-multiple-modules/src/*.purs \
     --output ../example4-dce-purs-multiple-modules/output
   cd -
   npx webpack
