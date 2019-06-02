@@ -2,9 +2,9 @@
 
 ## Prerequisites
 
-```sh
-brew install bats # or the equivalent on your system
-```
+- Node.js + npm: `brew install node`
+- `stack`: `curl -sSL https://get.haskellstack.org/ | sh`
+- `bats`: `brew install bats`
 
 ## Quickstart
 
