@@ -1,0 +1,4 @@
+[submodule "purescript"]
+	path = purescript
+	url = git@github.com:gasi/purescript.git
+	branch = esm-codegen
