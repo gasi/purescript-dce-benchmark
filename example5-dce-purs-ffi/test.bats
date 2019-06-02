@@ -27,6 +27,12 @@ function setup {
 @test 'The generated webpack bundle has a `pureScriptExternalUnused` function' {
   cat dist/main.js | grep 'pureScriptUnused' | grep 'function'
 }
-@test '`pureScriptExternalUnused` is designated as an unused export in the webpack bundle' {
+@test '`pureScriptExternalUnused` is not marked as an unused export in the webpack bundle' {
+  ! grep 'unused harmony export pureScriptExternalUnused' < dist/main.js
+}
+@test 'HACK: With manual conversion to ES module, `pureScriptExternalUnused` is marked unused' {
+  sed -i '' 's/exports\.\([a-zA-Z]*\) = function/export function \1/' output/External/foreign.js
+  npx webpack
+
   grep 'unused harmony export pureScriptExternalUnused' < dist/main.js
 }
