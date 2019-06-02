@@ -25,3 +25,9 @@ make --directory example1-dce-js
 ```sh
 make --directory example2-no-dce-purs
 ```
+
+## Example 3: DCE with webpack + PureScript ESM
+
+```sh
+make --directory example3-dce-purs
+```
