@@ -2,8 +2,8 @@
 
 function setup {
   rm -rf dist output
-  npx pulp build > /dev/null 2>&1
-  npx webpack > /dev/null 2>&1
+  npx purs compile src/*.purs
+  npx webpack
 }
 
 @test 'PureScript compiles to `module.exports` syntax' {
@@ -13,7 +13,7 @@ function setup {
   cat dist/main.js | grep 'pureScriptUnused' | grep 'function'
 }
 @test "The function is not designated as an unused export in the webpack bundle" {
-  ! grep 'unused harmony export pureScriptUnused' < dist/main.js 
+  ! grep 'unused harmony export pureScriptUnused' < dist/main.js
 }
 @test "But if I mangle it to use ES modules syntax, it is" {
   rm -rf dist output
@@ -31,5 +31,5 @@ export {
 }
 EOF
   npx webpack > /dev/null
-  grep 'unused harmony export pureScriptUnused' < dist/main.js 
+  grep 'unused harmony export pureScriptUnused' < dist/main.js
 }
