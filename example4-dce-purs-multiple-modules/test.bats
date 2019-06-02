@@ -21,12 +21,12 @@ function setup {
 @test 'The generated webpack bundle has a `pureScriptUnused` function' {
   cat dist/main.js | grep 'pureScriptUnused' | grep 'function'
 }
-@test '`pureScriptUnused` designated as an unused export in the webpack bundle' {
+@test '`pureScriptUnused` is marked as an unused export in the webpack bundle' {
   grep 'unused harmony export pureScriptUnused' < dist/main.js
 }
-@test 'The generated webpack bundle has a `pureScriptExternalUnused` function' {
+@test 'webpack bundle has a `pureScriptExternalUnused` function' {
   cat dist/main.js | grep 'pureScriptUnused' | grep 'function'
 }
-@test '`pureScriptExternalUnused` is designated as an unused export in the webpack bundle' {
+@test '`pureScriptExternalUnused` is marked as an unused export in the webpack bundle' {
   grep 'unused harmony export pureScriptExternalUnused' < dist/main.js
 }

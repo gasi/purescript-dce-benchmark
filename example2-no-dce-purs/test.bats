@@ -12,17 +12,17 @@ function setup {
 @test 'The generated webpack bundle has a `pureScriptUnused` function' {
   cat dist/main.js | grep 'pureScriptUnused' | grep 'function'
 }
-@test "The function is not designated as an unused export in the webpack bundle" {
+@test '`pureScriptUnused` is not marked as an unused export in the webpack bundle' {
   ! grep 'unused harmony export pureScriptUnused' < dist/main.js
 }
-@test "But if I mangle it to use ES modules syntax, it is" {
+@test 'HACK: With manual conversion to ES modules syntax, `pureScriptUnused` is marked as unused' {
   rm -rf dist output
-  npx pulp build > /dev/null 2>&1
+  npx pulp build
 
   # Find the line number of 'module.exports'
-  local ln="$(grep -n "module\.exports" < output/Main/index.js | grep -o "[0-9]\+")"
+  local line="$(grep -n "module\.exports" < output/Main/index.js | grep -o "[0-9]\+")"
   local tempfile="$(mktemp)"
-  cat output/Main/index.js | head "-$((ln - 1))" > "${tempfile}"
+  cat output/Main/index.js | head "-$((line - 1))" > "${tempfile}"
   mv "${tempfile}" output/Main/index.js
   cat <<EOF >> output/Main/index.js
 export {
@@ -30,6 +30,6 @@ export {
   pureScriptUnused
 }
 EOF
-  npx webpack > /dev/null
+  npx webpack
   grep 'unused harmony export pureScriptUnused' < dist/main.js
 }
