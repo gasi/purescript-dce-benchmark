@@ -2,17 +2,12 @@
 
 function setup {
   rm -rf dist output
-  cd ../..
-  if [[ ! -d purescript ]]; then
-    git clone git@github.com:gasi/purescript.git
-  fi
-  cd purescript
-  git checkout esm-codegen
+  cd ../purescript
   stack build
   stack exec purs \
-    -- compile ../purescript-dce-benchmark/example3-dce-purs/src/*.purs \
-    --output ../purescript-dce-benchmark/example3-dce-purs/output
-  cd ../purescript-dce-benchmark/example3-dce-purs
+    -- compile ../example3-dce-purs/src/*.purs \
+    --output ../example3-dce-purs/output
+  cd -
   npx webpack
 }
 
