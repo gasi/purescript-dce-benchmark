@@ -1,3 +1,3 @@
 test:
-	npm install
+	npm install --silent
 	bats test.bats
