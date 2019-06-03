@@ -37,3 +37,9 @@ make --directory example3-dce-purs
 ```sh
 make --directory example4-dce-purs-multiple-modules
 ```
+
+## Example 5: DCE with webpack + PureScript ESM + FFI
+
+```sh
+make --directory example5-dce-purs-ffi
+```
